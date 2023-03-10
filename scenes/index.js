@@ -56,8 +56,6 @@ stage.hears(([
   '/help',
   '/packs',
   '/emoji',
-  '/lang',
-  '/donate',
   '/publish'
 ]), async (ctx, next) => {
   await ctx.scene.leave()
