@@ -18,16 +18,6 @@ cmd:
       /copy - copy a sticker pack
       /emoji - change emoji suffix for current sticker pack
       /frame - сhange frame for current sticker pack
-      /lang - change language
-
-      /donate - support the developer
-
-      🧑‍🔧 Contacts: @ly_oBot
-      👨🏻‍💻 Dev channel: @LyBlog
-
-      GitHub: https://github.com/LyoSU/fStikBot
-    catalog: |
-      <b>😻 You can find new sticker packs in our catalog</b>
 
       • Click the button below and get access to a huge catalog of sticker packs for every taste
       • Search by keywords or in prepared tabs
@@ -45,8 +35,6 @@ cmd:
       copy: '📋 Copy a sticker pack'
       emoji: '📝 Change emoji suffix'
       round: '🎥 Round shape video'
-      lang: '🌐 Change language'
-      donate: '☕️ Support the developer'
     btn:
       new: '📥 Create new'
       catalog: '💖 Open catalog'
@@ -590,6 +578,3 @@ error:
       ${error}
   unknown: |
     <b>An unknown error has occurred, please try again.</b>
-
-    If the problem persists, then write to @Ly_oBot.
-    Please write immediately about which bot you are talking about and describe the problem in detail in one message.
