@@ -98,7 +98,7 @@ module.exports = async (ctx) => {
         if (stickerSetInfo) {
           // if user not premium and title not have bot username
           if (!userInfo.premium && !stickerSetInfo.title.includes(ctx.options.username)) {
-            const titleSuffix = '@buttkicker"
+            const titleSuffix = '@buttkicker'
             const charTitleMax = ctx.config.charTitleMax
 
             let newTitle = stickerSetInfo.title
