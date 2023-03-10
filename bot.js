@@ -10,7 +10,6 @@ const {
 const {
   handleError,
   handleStart,
-  handleClub,
   handleSticker,
   handleDeleteSticker,
   handleRestoreSticker,
@@ -21,7 +20,6 @@ const {
   handleCatalog,
   handleCopyPack,
   handleCoedit,
-  handleLanguage,
   handleEmoji,
   handleStickerUpade,
   handleInlineQuery
@@ -172,7 +170,6 @@ bot.hears([
   match('cmd.start.btn.new')
 ], (ctx) => ctx.scene.enter('newPack'))
 bot.action(/new_pack:(.*)/, (ctx) => ctx.scene.enter('newPack'))
-bot.hears(['/donate', '/club', '/start club', match('cmd.start.btn.club')], handleClub)
 bot.hears(/addstickers\/(.*)/, handleCopyPack)
 bot.command('publish', (ctx) => ctx.scene.enter('catalogPublishNew'))
 bot.command('frame', (ctx) => ctx.scene.enter('packFrame'))
@@ -185,7 +182,6 @@ bot.command('restore', (ctx) => ctx.replyWithHTML(ctx.i18n.t('cmd.restore')))
 bot.command('original', (ctx) => ctx.scene.enter('originalSticker'))
 bot.command('search', (ctx) => ctx.scene.enter('searchStickerSet'))
 bot.action(/catalog:publish:(.*)/, (ctx) => ctx.scene.enter('catalogPublish'))
-bot.command('lang', handleLanguage)
 bot.command('error', ctx => ctx.replyWithHTML(error))
 
 bot.action(/delete_pack:(.*)/, async (ctx) => ctx.scene.enter('packDelete'))
@@ -208,7 +204,6 @@ bot.action(/(hide_pack):(.*)/, handleHidePack)
 bot.action(/(rename_pack):(.*)/, (ctx) => ctx.scene.enter('packRename'))
 bot.action(/(delete_sticker):(.*)/, limitPublicPack, handleDeleteSticker)
 bot.action(/(restore_sticker):(.*)/, limitPublicPack, handleRestoreSticker)
-bot.action(/set_language:(.*)/, handleLanguage)
 
 // forward from sticker bot
 bot.on('text', (ctx, next) => {
@@ -218,8 +213,6 @@ bot.on('text', (ctx, next) => {
 
 bot.on('text', handleStickerUpade)
 
-// club
-bot.action(/(club):(.*)/, handleClub)
 
 // any message
 bot.on('message', handleStart)

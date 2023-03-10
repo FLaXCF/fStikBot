@@ -6,10 +6,7 @@ module.exports = async (ctx) => {
     { command: 'start', description: ctx.i18n.t('cmd.start.commands.start') },
     { command: 'packs', description: ctx.i18n.t('cmd.start.commands.packs') },
     { command: 'delete', description: ctx.i18n.t('cmd.start.commands.delete') },
-    { command: 'catalog', description: ctx.i18n.t('cmd.start.commands.catalog') },
-    { command: 'publish', description: ctx.i18n.t('cmd.start.commands.publish') },
-    { command: 'lang', description: ctx.i18n.t('cmd.start.commands.lang') },
-    { command: 'donate', description: ctx.i18n.t('cmd.start.commands.donate') }
+    { command: 'catalog', description: ctx.i18n.t('cmd.start.commands.catalog') }
   ]
 
   await ctx.telegram.callApi('setMyCommands', {
